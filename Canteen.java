@@ -7,7 +7,7 @@ public class Canteen {
 
         Scanner input = new Scanner(System.in);
 
-        // MENU
+        
         System.out.println("======= MENU ========");
         System.out.println("| 1. Burger   - $45 |");
         System.out.println("| 2. Siomai   - $50 |");
@@ -36,7 +36,7 @@ public class Canteen {
             System.out.print("Enter quantity (1-10): ");
             int quantity = input.nextInt();
 
-            // VALIDATION
+         
             if (itemNumber < 1 || itemNumber > 9) {
 
                 System.out.println("Invalid item number!");
@@ -51,7 +51,7 @@ public class Canteen {
             }
             else {
 
-                // Ask student status ONLY ONCE
+                
                 if (!askedStudent) {
                     System.out.print("Are you a student? (Y/N): ");
                     char student = input.next().charAt(0);
@@ -65,7 +65,7 @@ public class Canteen {
 
                 double price = 0;
 
-                // Get the price
+                
                 if (itemNumber == 1) {
                     price = 45;
                 }
@@ -96,7 +96,7 @@ public class Canteen {
 
                 double orderAmount = price * quantity;
 
-                // Add valid order to totals
+               
                 itemQuantity += quantity;
                 Subtotal += orderAmount;
 
@@ -108,7 +108,7 @@ public class Canteen {
             orderAgain = input.next().charAt(0);
         }
 
-        // DISCOUNT
+        
         double discountRate = 0;
 
         if (isStudent && Subtotal >= 500) {
@@ -124,7 +124,7 @@ public class Canteen {
         double Discount = Subtotal * discountRate;
         double Total = Subtotal - Discount;
 
-        // FINAL SUMMARY
+        
         System.out.println("\n=========================");
         System.out.println("|     FINAL SUMMARY     |");
         System.out.println("=========================");
